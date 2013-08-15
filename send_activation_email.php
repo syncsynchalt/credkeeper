@@ -13,7 +13,7 @@ $content = "
 </html>
 ";
 
-mail($user, 'Activation email', $content);
+mail($user, 'Activation email', $content, 'Content-Type: text/html');
 
 ?>
 <html>
