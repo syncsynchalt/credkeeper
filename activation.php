@@ -7,6 +7,7 @@ $key = '';
 while (strlen($key) < 32) {
     $key .= dechex(rand(0, 15));
 }
+$key = 'pass-' . $key;
 write_value($user . '/key', $key);
 ?>
 

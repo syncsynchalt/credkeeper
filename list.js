@@ -7,8 +7,8 @@ activateButton = function(data, button) {
         templ = $(button).attr('templ'),
         user = getUserName(),
         enckey = localStorage[user + '_encryption_key'],
-        user = CryptoJS.AES.decrypt(data[key + '/user'], enckey),
-        pass = CryptoJS.AES.decrypt(data[key + '/pass'], enckey);
+        user = Aes.Ctr.decrypt(data[key + '/user'], enckey, 256),
+        pass = Aes.Ctr.decrypt(data[key + '/pass'], enckey, 256);
 
     if (!user || !pass) {
         return;
