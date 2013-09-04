@@ -3,12 +3,15 @@
 require_once('session.php');
 require_once('db.php');
 
-$key = '';
-while (strlen($key) < 32) {
-    $key .= dechex(rand(0, 15));
+$key = read_value($user . '/key');
+if (empty($key)) {
+    $key = '';
+    while (strlen($key) < 32) {
+        $key .= dechex(rand(0, 15));
+    }
+    $key = 'pass-' . $key;
+    write_value($user . '/key', $key);
 }
-$key = 'pass-' . $key;
-write_value($user . '/key', $key);
 ?>
 
 <html>
