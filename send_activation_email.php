@@ -2,7 +2,8 @@
 
 require_once('session.php');
 
-$this_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$this_url  = ($_SERVER['SERVER_PORT'] == 443 ? "https://" : "http://");
+$this_url .= $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $activation_url = str_replace('send_activation_email.php', 'activation.php', $this_url);
 
 $content = "
