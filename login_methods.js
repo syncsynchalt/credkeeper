@@ -6,7 +6,8 @@ pax8_login = function(site, user, pass) {
         data: 'j_username=' + user + '&j_password=' + pass,
         success: function(result) {
             window.location = site + '/portal/jsp/home.jsp';
-        }
+        },
+        xhrFields: {withCredentials: true}
     });
 };
 
