@@ -16,10 +16,12 @@ require_once('db.php');
 <div style="visibility: hidden" id="username"><?= $user ?></div>
 
 <p>Log in to staging:
-<button class=loginButton key=staging templ="pax8_login('https://staging.pax8.com', 'USER', 'PASS')">Login</button>
+<button class=loginButton key=staging
+        templ="split_login('https://staging.pax8.com/portal/jsp/login.jsp', 'USER', 'PASS', 'KEY')">Login</button>
 
 <p>Log in to integration:
-<button class=loginButton key=integration templ="pax8_login('https://integration.pax8.com', 'USER', 'PASS')">Login</button>
+<button class=loginButton key=integration
+        templ="pax8_login('https://integration.pax8.com', 'USER', 'PASS')">Login</button>
 
 <div id="activation">
 <form method=POST action=send_activation_email.php>

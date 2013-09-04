@@ -9,3 +9,8 @@ pax8_login = function(site, user, pass) {
         }
     });
 };
+
+split_login = function(site, user, pass, key) {
+    if (window.console) console.log('logging in with user:' + user + ' pass:' + pass);
+    window.location = 'split.php?site=' + encodeURIComponent(site) + '&key=' + encodeURIComponent(key);
+};

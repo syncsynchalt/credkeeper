@@ -16,6 +16,7 @@ activateButton = function(data, button) {
 
     templ = templ.replace('USER', user);
     templ = templ.replace('PASS', pass);
+    templ = templ.replace('KEY', key);
     $(button).removeAttr('disabled');
     $(button).bind('click', function() { eval(templ); });
 }
